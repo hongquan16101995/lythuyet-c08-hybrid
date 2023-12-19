@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+<!--    giúp IoCContainer quét qua package chỉ định để tìm kiếm và tạo sẵn các Bean-->
+<!--    nhằm hỗ trợ LTV sử dụng-->
+    <context:component-scan base-package="com.example.firstspring"/>
+
+<!--    cho phép sử dụng các annotation trong dự án Spring này-->
+<!--    annotation: được ký hiệu bắt đầu bằng ký tự @,
+đánh dấu các thành phần cài đặt trong dự án Spring-->
+    <mvc:annotation-driven/>
+
+<!--    quy định về đường dẫn của view trong dự án Spring-->
+<!--    thông qua module trong Spring: InternalViewResolver để cài đặt-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+</beans>
