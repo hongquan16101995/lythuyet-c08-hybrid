@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/api/products/create}">Create new</a>
+<p th:if="${message == 'Hello'}">HelloWorld</p>
+<p th:text="${message == 'Hello' ? 'HelloWorld' : 'Byebye'}"></p>
+<table>
+  <tr>
+    <th>STT</th>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th colspan="4">Status</th>
+  </tr>
+<!--  th:each dùng để triển khai vòng lặp trong HTML với mã Java-->
+<!--  p đại diện cho từng đối tượng có trong List-->
+<!--  ps đại diện cho trạng thái của đối tượng đó-->
+  <tr th:each="p, ps : ${products}" >
+    <td th:text="${ps.count}"></td>
+    <td th:text="${p.id}"></td>
+    <td th:text="${p.name}"></td>
+    <td th:text="${p.price}"></td>
+    <td th:text="${p.quantity}"></td>
+    <td th:text="${ps.even}"></td>
+    <td th:text="${ps.odd}"></td>
+    <td th:text="${ps.first}"></td>
+    <td th:text="${ps.last}"></td>
+  </tr>
+</table>
+</body>
+</html>

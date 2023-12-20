@@ -11,12 +11,12 @@
     <title>Title</title>
 </head>
 <body>
-<form action="/api/products" method="post">
+<form action="/api/demo" method="post">
     <h1>PostMapping</h1>
     <input type="text" name="name">
     <button type="submit">Create1</button>
 </form>
-<form action="/api/products/create" method="post">
+<form action="/api/demo/create" method="post">
     <h1>RequestMapping</h1>
     <input type="text" name="name">
     <button type="submit">Create1</button>
